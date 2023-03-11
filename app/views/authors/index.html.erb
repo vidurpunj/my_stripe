@@ -3,12 +3,23 @@
 <h1>Authors</h1>
 
 <div id="authors">
-  <% @authors.each do |author| %>
-    <%= render author %>
-    <p>
-      <%= link_to "Show this author", author %>
-    </p>
-  <% end %>
+  <table class="table table-striped table-bordered">
+    <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @authors.each do |author| %>
+      <tr>
+        <td><%= author.first_name %></td>
+        <td><%= author.last_name %></td>
+        <td><%= link_to "Show this author", author %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
 </div>
 
 <%= link_to "New author", new_author_path %>

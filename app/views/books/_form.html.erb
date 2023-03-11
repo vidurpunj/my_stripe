@@ -12,8 +12,12 @@
   <% end %>
 
   <div>
-    <%= form.label :title, style: "display: block" %>
-    <%= form.text_field :title %>
+    <%= form.label :title, style: "display: block"  %>
+    <%= form.text_field :title, class: 'form-control' %>
+  </div>
+  <div class="mb-2">
+    <%= form.label :price, style: "display: block" %>
+    <%= form.text_field :price, class: 'form-control' %>
   </div>
 
   <div>
