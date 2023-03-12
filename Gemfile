@@ -74,3 +74,8 @@ group :test do
   gem "webdrivers"
 end
 gem 'devise'
+gem 'money'
+gem 'byebug'
+gem 'byebug'
+gem 'stripe'
+gem 'rack-cors'

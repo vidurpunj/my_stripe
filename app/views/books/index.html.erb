@@ -19,8 +19,14 @@
           <%= book.title %>
         </td>
         <td>
+          <%= Money.new(book.price, "INR").format(south_asian_number_formatting: true)  %>
+        </td>
+        <td>
+          <%= link_to "Edit this book", edit_book_path(book) %>
+          |
           <%= link_to "Show this book", book %>
-          <%= link_to "Purchase", book %>
+          |
+          <%= link_to "Purchase", book_new_purchase_path(book) %>
         </td>
       </tr>
     <% end %>

@@ -3,5 +3,10 @@
     <strong>Title:</strong>
     <%= book.title %>
   </p>
+  <p>
+    <strong>Price:</strong>
+    <%= Money.new(book.price, "INR").format(south_asian_number_formatting: true) %>
+  </p>
+
 
 </div>

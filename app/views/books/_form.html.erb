@@ -16,7 +16,8 @@
     <%= form.text_field :title, class: 'form-control' %>
   </div>
   <div class="mb-2">
-    <%= form.label :price, style: "display: block" %>
+
+    <%= form.label :price, style: "display: block" %>(Please enter amount in paise ) current value <%= Money.new(form.object.price, "INR") %>
     <%= form.text_field :price, class: 'form-control' %>
   </div>
 
