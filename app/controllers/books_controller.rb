@@ -59,12 +59,11 @@ class BooksController < ApplicationController
   end
 
   def new_purchase
-    Stripe.api_key = 'sk_test_rTxyFQAuEqMjT0DJ0XPGzFYU'
-    domain = 'https://e035-2401-4900-1c68-3bbd-fa66-f155-7297-7757.in.ngrok.io'
+    Stripe.api_key = ENV['STRIPE_API_KEY']
+    domain = ENV['WEBSITE_URL']
     @stripe_session = Stripe::Checkout::Session.create({
                                                  line_items: [{
-                                                                # Provide the exact Price ID (e.g. pr_1234) of the product you want to sell
-                                                                price: 'price_1MkK9WEKG9XSLvIWjQ9dqONf',
+                                                                price: ENV['PRODUCT_ID'],
                                                                 quantity: 1,
                                                               }],
                                                  mode: 'payment',
@@ -75,12 +74,11 @@ class BooksController < ApplicationController
   end
 
   def create_checkout_session
-    Stripe.api_key = 'sk_test_rTxyFQAuEqMjT0DJ0XPGzFYU'
-    domain = 'https://46e5-2401-4900-1c68-3bbd-2260-e4a9-9d55-637a.in.ngrok.io'
+    Stripe.api_key = ENV['STRIPE_API_KEY']
+    domain = ENV['WEBSITE_URL']
     session = Stripe::Checkout::Session.create({
                                                  line_items: [{
-                                                                # Provide the exact Price ID (e.g. pr_1234) of the product you want to sell
-                                                                price: 'price_1MkK9WEKG9XSLvIWjQ9dqONf',
+                                                                price: ENV['PRODUCT_ID'],
                                                                 quantity: 1,
                                                               }],
                                                  mode: 'payment',

@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :authors
   devise_for :users
   root to: "welcome#index"
+  resources :razor_pay
 end
